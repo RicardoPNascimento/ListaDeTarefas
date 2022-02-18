@@ -35,8 +35,6 @@ ul{
 #Border1{
     border: 2px solid black;
     border-radius: 10px;
-    width: 400px;
-    align-content: center;
 }
 #DistBorder{
     padding: 10px;
