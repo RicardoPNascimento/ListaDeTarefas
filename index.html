@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Tarefas</title>
+</head>
+
+<body id="otis">
+    <div class="grid">
+        <div id="Border1">
+            <div id="DistBorder">
+                <h3 id="Topo">ADD ITEM</h3>
+                <input type="text" placeholder="type here" id="adiciona">
+                <button onclick="adicionar()" class="adicionar btn btn-primary">add</button>
+            </div>
+            <h4>TODO</h4>
+            <div>
+                <ul id="itensAfazer" class="DistLi list-group">
+                </ul>
+            </div>
+            <h4>COMPLETED</h4>
+            <div>
+                <ul id="itensFeitos" class="DistLi">
+                </ul>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

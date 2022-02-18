@@ -1,0 +1,41 @@
+#otis li {
+    list-style: none;
+    /* remover bullets */
+}
+
+ .adicionar{
+border-radius: 10px;
+}
+body{
+    font-family: arial;
+}
+.grid{
+    display: grid;
+    place-content:center;
+    margin-top: 50px;
+    gap: 20px;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+#itensFeitos{
+    text-decoration: line-through;
+}
+    
+.editavel{
+    padding: 10px;
+    border-radius: 5px ;
+}
+.DistLi{
+    display: grid;
+   gap: 10px;
+/* ul como grid e gap para as li */
+}
+#Border1{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#DistBorder{
+    padding: 10px;
+}
