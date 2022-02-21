@@ -43,7 +43,9 @@ function descolar(id) {
     let todoList = document.getElementById("itensAfazer");  //minha lista todo , propriedade
     if (task.checked) {
         completedList.appendChild(task.parentElement)
+        document.getElementById(id + "s").classList.add("temp")
     } else {
         todoList.appendChild(task.parentElement)
+        document.getElementById(id + "s").classList.remove("temp")
     }
 }//inserir elemento filho no pai
