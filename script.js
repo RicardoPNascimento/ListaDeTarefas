@@ -28,7 +28,7 @@ function editar(indice_tarefa) {
     document.getElementById(indice + "s").contentEditable = "true";
     document.getElementById(indice + "s").classList.add("editavel");
     botaosalvar.style.display = "inline-block";//mostrar
-    botaoeditar.style.display="none";
+    botaoeditar.style.display="none"; 
 }
 
 function salvar(indice_tarefa) {
