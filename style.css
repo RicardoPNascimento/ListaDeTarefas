@@ -1,3 +1,10 @@
+.temp{
+    text-decoration: line-through;
+}
+#itensFeitos{
+    text-decoration: line-through;
+}
+
 #otis li {
     list-style: none;
     /* remover bullets */
@@ -14,18 +21,18 @@ body{
     place-content:center;
     margin-top: 50px;
     gap: 20px;
+    text-align: center;
 }
 ul{
     margin: 0px;
     padding: 0px;
 }
-#itensFeitos{
-    text-decoration: line-through;
-}
+
     
 .editavel{
     padding: 10px;
     border-radius: 5px ;
+    border: 2px solid black;
 }
 .DistLi{
     display: grid;
@@ -39,3 +46,11 @@ ul{
 #DistBorder{
     padding: 10px;
 }
+h4{
+    padding-top: 10px;
+}
+span{
+    display: inline-block;
+    width: 150px;
+}
+
