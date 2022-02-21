@@ -48,4 +48,5 @@ function descolar(id) {
         todoList.appendChild(task.parentElement)
         document.getElementById(id + "s").classList.remove("temp")
     }
-}//inserir elemento filho no pai
+}
+//inserir elemento filho no pai
