@@ -12,8 +12,8 @@ function adicionar() {
     <li class="list-group-item">
         <input type="checkbox" onclick="descolar(this.id)" id="${count}">
         <span contenteditable = "false" spellcheck = "false"  id="${count + "s"}">${tarefas[count]}</span>
-        <button onclick="editar('${tarefas[count]}')" class="btn btn-warning">Editar</button>
-        <button onclick="salvar('${tarefas[count]}')" class="btn btn-success">Salvar</button>
+        <button onclick="editar('${tarefas[count]}')" class="btn btn-warning" id="esconderEditar">Editar</button>
+        <button onclick="salvar('${tarefas[count]}')" class= "hide btn btn-success" id="esconderSalvar">Salvar</button>
         <button id="botaoExcluir" class="btn btn-danger" onclick="removerElemento(event.target)">excluir</button>
     </li>
     `;
@@ -22,15 +22,23 @@ function adicionar() {
 }
 
 function editar(indice_tarefa) {
+    let botaoeditar=document.getElementById("esconderEditar");
+    let botaosalvar=document.getElementById("esconderSalvar");//botão salvar
     let indice = tarefas.indexOf(indice_tarefa)
     document.getElementById(indice + "s").contentEditable = "true";
     document.getElementById(indice + "s").classList.add("editavel");
+    botaosalvar.style.display = "inline-block";//mostrar
+    botaoeditar.style.display="none";
 }
 
 function salvar(indice_tarefa) {
+    let botaoeditar=document.getElementById("esconderEditar");
+    let botaosalvar=document.getElementById("esconderSalvar");
     let indice = tarefas.indexOf(indice_tarefa)
     document.getElementById(indice + "s").contentEditable = "false";
     document.getElementById(indice + "s").classList.remove("editavel");
+    botaoeditar.style.display="inline-block";
+    botaosalvar.style.display="none";
 }
 
 function removerElemento(elementoClicado) {
