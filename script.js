@@ -10,10 +10,10 @@ function adicionar() {
     tarefas.push(item);
     itensLi.innerHTML += `
     <li class="list-group-item">
-        <input type="checkbox" onclick="descolar(this.id)" id="${count}">
-        <span contenteditable = "false" spellcheck = "false"  id="${count + "s"}">${tarefas[count]}</span>
-        <button type="button" onclick="editar('${tarefas[count]}')" class="btn btn-warning" id="${count + "m"}">Editar</button>
-        <button type="button" onclick="salvar('${tarefas[count]}')" class= "hide btn btn-success" id="${count + "n"}">Salvar</button>
+        <input type="checkbox" onclick="descolar(event.target)">
+        <span contenteditable = "false" spellcheck = "false" class="btn-span">${tarefas[count]}</span>
+        <button type="button" onclick="editar(event.target)" class="btn-editar btn btn-warning">Editar</button>
+        <button type="button" onclick="salvar(event.target)" class= "btn-salvar hide btn btn-success">Salvar</button>
         <button id="botaoExcluir" class="btn btn-danger" onclick="removerElemento(event.target)">excluir</button>
     </li>
     `;
@@ -21,33 +21,35 @@ function adicionar() {
     document.getElementById("adiciona").value = ""
 }
 
-function editar(indice_tarefa) {
-    let indice = tarefas.indexOf(indice_tarefa)
-    let botaoeditar=document.getElementById(indice + "m");
-    let botaosalvar=document.getElementById(indice + "n");
-    document.getElementById(indice + "s").contentEditable = "true";
-    document.getElementById(indice + "s").classList.add("editavel");
-    botaoeditar.style.display="none"; 
-    botaosalvar.style.display = "inline-block";//mostrar
+function editar(elementoClicado) {
+    let botaoeditar=elementoClicado;
+    let parentLi=botaoeditar.parentElement  
+    let botaosalvar=parentLi.getElementsByClassName("btn-salvar")[0];
+    let spanEd=parentLi.getElementsByClassName("btn-span")[0];
+    spanEd.contentEditable="true"
+    spanEd.classList.add("editavel")
+    botaoeditar.classList.add("hide")
+    botaosalvar.classList.remove("hide")
     
 }
 
-function salvar(indice_tarefa) {
-    let indice = tarefas.indexOf(indice_tarefa)
-    let botaoeditar=document.getElementById(indice + "m");
-    let botaosalvar=document.getElementById(indice + "n");
-    document.getElementById(indice + "s").contentEditable = "false";
-    document.getElementById(indice + "s").classList.remove("editavel");
-    botaoeditar.style.display="inline-block";
-    botaosalvar.style.display="none";
+function salvar(elementoClicado) {
+    let botaosalvar=elementoClicado;
+    let parentLi=botaosalvar.parentElement  
+    let botaoeditar=parentLi.getElementsByClassName("btn-editar")[0];
+    let spanEd=parentLi.getElementsByClassName("btn-span")[0];
+    spanEd.contentEditable="false"
+    spanEd.classList.remove("editavel")
+    botaoeditar.classList.remove("hide")
+    botaosalvar.classList.add("hide")
 }
 
 function removerElemento(elementoClicado) {
     elementoClicado.closest("li").remove()
 }//seleciona o ancestral mais próximo
 
-function descolar(id) {
-    let task = document.getElementById(id); //checkbox
+function descolar(elementoClicado) {
+    let task = elementoClicado; //checkbox
     let completedList = document.getElementById("itensFeitos"); //minha lista completed
     let todoList = document.getElementById("itensAfazer");  //minha lista todo , propriedade
     if (task.checked) {
