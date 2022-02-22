@@ -2,14 +2,11 @@
     display: none;
 }
 
-.temp{
-    text-decoration: line-through;
-}
-#itensFeitos{
-    text-decoration: line-through;
+#itensFeitos .btn-span{
+    text-decoration: line-through red 2px;
 }
 
-#otis li {
+#otis li{
     list-style: none; 
     /* remover bullets */
 }
