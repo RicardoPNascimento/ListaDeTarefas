@@ -11,26 +11,26 @@
     <title>Lista de Tarefas</title>
 </head>
 
-<body id="otis">
+<body id="bullet">
     <div class="grid">
         <div id="Border1">
             <div id="DistBorder">
+                <p id="authors"></p>
                 <h3 id="Topo">ADD ITEM</h3>
                 <input type="text" placeholder="type here" id="adiciona" maxlength="20">
                 <button type="button" onclick="adicionar()" class="adicionar btn btn-primary">add</button>
             </div>
             <h4>TODO</h4>
             <div>
-                <ul id="itensAfazer" class="DistLi list-group" contenteditable="false">
+                <ul id="itensAfazer" class="list-group">
                 </ul>
             </div>
             <h4>COMPLETED</h4>
             <div>
-                <ul id="itensFeitos" class="DistLi">
+                <ul id="itensFeitos">
                 </ul>
             </div>
         </div>
-
         <script src="script.js"></script>
 </body>
 

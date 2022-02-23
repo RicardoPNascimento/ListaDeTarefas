@@ -1,3 +1,4 @@
+api()
 function adicionar() {
     let item = document.getElementById("adiciona").value; //pegando valor do input
     let itensLi = document.getElementById("itensAfazer");      //chamando minha li do TODO
@@ -25,7 +26,6 @@ function editar(elementoClicado) {
     spanEd.classList.add("editavel")
     botaoeditar.classList.add("hide")
     botaosalvar.classList.remove("hide")
-    
 }
 
 function salvar(elementoClicado) {
@@ -45,13 +45,26 @@ function removerElemento(elementoClicado) {
 
 function descolar(elementoClicado) {
     let task = elementoClicado;
-    let completedList = document.getElementById("itensFeitos"); //minha lista completed
-    let todoList = document.getElementById("itensAfazer");  //minha lista todo , propriedade
-
     if (task.checked) {
+        let completedList = document.getElementById("itensFeitos");
         completedList.appendChild(task.parentElement)
     } else {
+        let todoList = document.getElementById("itensAfazer");
         todoList.appendChild(task.parentElement)
     }
 }
-//inserir elemento filho no pai
+
+function api() {
+    fetch('https://randomuser.me/api/')
+        .then((resp) => resp.json())
+        .then(function (data) {
+            let authors = data.results;
+            return authors.map(function (author) {
+                let nome = author.name.first;
+                document.getElementById("authors").innerHTML = "Olá, " + nome + "!"
+            });
+        })
+        .catch(function (error) {
+            console.log("Ola , mundo !");
+        });
+}

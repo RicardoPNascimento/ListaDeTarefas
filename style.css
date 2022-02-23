@@ -6,17 +6,18 @@
     text-decoration: line-through red 2px;
 }
 
-#otis li{
+#bullet li{
     list-style: none; 
-    /* remover bullets */
 }
 
- .adicionar{
+.adicionar{
 border-radius: 10px;
 }
+
 body{
     font-family: arial;
 }
+
 .grid{
     display: grid;
     place-content:center;
@@ -24,35 +25,35 @@ body{
     gap: 20px;
     text-align: center;
 }
+
 ul{
     margin: 0px;
     padding: 0px;
 }
 
-    
-.editavel{
+#itensFeitos .btn-span.editavel{
     padding: 10px;
     border-radius: 5px ;
     border: 2px solid black;
+    text-decoration: none ;
 }
-.DistLi{
-    display: grid;
-   gap: 10px;
-/* ul como grid e gap para as li */
-}
+
 #Border1{
     border: 2px solid black;
     border-radius: 10px;
 }
+
 #DistBorder{
     padding: 10px;
 }
+
 h4{
     padding-top: 10px;
 }
+
 span{
     display: inline-block;
     width: 150px;
     font-size: 20px;
+    
 }
-
