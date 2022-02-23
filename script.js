@@ -58,11 +58,9 @@ function api() {
     fetch('https://randomuser.me/api/')
         .then((resp) => resp.json())
         .then(function (data) {
-            let authors = data.results;
-            return authors.map(function (author) {
-                let nome = author.name.first;
-                document.getElementById("authors").innerHTML = "Olá, " + nome + "!"
-            });
+            let usuario = data.results[0];   //array
+            let nome = usuario.name.first;   //objeto
+            document.getElementById("authors").innerHTML = "Olá, " + nome + "!"
         })
         .catch(function (error) {
             console.log("Ola , mundo !");
