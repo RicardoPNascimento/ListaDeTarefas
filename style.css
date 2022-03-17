@@ -31,12 +31,19 @@ ul{
     padding: 0px;
 }
 
-#itensFeitos .btn-span.editavel{
+#itensFeitos .btn-span.editavel,#itensAfazer .btn-span.editavel{
     padding: 10px;
     border-radius: 5px ;
     border: 2px solid black;
     text-decoration: none ;
 }
+
+/* .editavel{
+    padding: 10px;
+    border-radius: 5px ;
+    border: 2px solid black;
+    text-decoration: none !important;
+} */
 
 #Border1{
     border: 2px solid black;

@@ -10,7 +10,7 @@ function adicionar() {
         <input type="checkbox" onclick="descolar(event.target)">
         <span contenteditable = "false" spellcheck = "false" class="btn-span">${item}</span>
         <button type="button" onclick="editar(event.target)" class="btn-editar btn btn-warning">Editar</button>
-        <button type="button" onclick="salvar(event.target)" class= "btn-salvar hide btn btn-success">Salvar</button>
+        <button type="button" onclick="salvar(event.target)" class= "btn-salvar btn btn-success hide">Salvar</button>
         <button id="botaoExcluir" class="btn btn-danger" onclick="removerElemento(event.target)">excluir</button>
     </li>
     `;
@@ -63,6 +63,6 @@ function api() {
             document.getElementById("authors").innerHTML = "Olá, " + nome + "!"
         })
         .catch(function (error) {
-            console.log("Ola , mundo !");
+            console.log("Olá , mundo !");
         });
 }
